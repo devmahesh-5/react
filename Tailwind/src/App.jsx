@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Card from './component/card'
 function App() {
-  let [count, setCount] = useState(0)
+
   // let myObj={
   //   sub1
   // }
@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <h2 className="text-3xl font-bold underline bg-red-500 text-white p-5 rounded-lg">Test ,TailWind</h2>
-      <Card sub={subArr[0]} rating="4.2"/>
+      <Card sub={subArr[0]} rating="4.2"/>//props passed to card
       <Card sub={subArr[1]} rating ="4.5"/>
       <Card sub={subArr[2]} rating="4.7"/>
       <Card/>
