@@ -1,5 +1,6 @@
 import React from "react";
-function Card({sub="Technology",rating=3.2}){//as passed from app props is an object which has a array with elements chemistry,physics,maths
+function Card({sub="Technology",rating=3.2}){//destructuring of the object props...
+  //as passed from app props is an object which has two elements sub and rating
     // console.log("props",props);
     
     return(

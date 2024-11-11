@@ -17,9 +17,9 @@ const generatePassword = useCallback(() => {
   let char="!@#$%^&*()_+{}";
   numAllow?str+=num:"";
   charAllow?str+=char:"";
-  for (let i = 0; i <= length; i++) {
-    pass+=str.charAt(Math.floor(Math.random()*str.length+1));
-  }
+for(let i=0;i<length;i++){
+  pass+=str.charAt(Math.floor(Math.random()*str.length));
+}
   setPassword(pass);
 },[numAllow,charAllow,length,setPassword]);
 //useRef hook to get access to the element
@@ -29,7 +29,7 @@ const copyToClipboard=useCallback(()=>{
   // passRef.current.setSelectionRange(0, 8);
   window.navigator.clipboard.writeText(Password);
 },[Password])
-//useEffect hook for optimization(if only dependencies changed,then only component will re-render else this specific component will not be recreated at the time of vdom and real dom comparision (for changes in parent component ))  
+//useEffect hook for optimization(if only dependencies changed,then only component will re-render else this specific component will not be recreated at the time of vdom and real dom comparision)  
 useEffect(() => {
   generatePassword();
 },[numAllow,charAllow,length,generatePassword])

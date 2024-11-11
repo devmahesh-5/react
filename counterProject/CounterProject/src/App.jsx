@@ -10,7 +10,7 @@ function App() {
   // let counter=0;
   const add=()=>{
     // counter++;//now this is not a way to update the value of counter
-   counter==20?setCounter(20):setCounter(counter+1);
+   counter==20?setCounter(20):setCounter(counter+1);//dont increase the value of counter more than 20
     // if(counter==20){
     //   return null;
     // }else{
