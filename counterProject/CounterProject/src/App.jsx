@@ -1,6 +1,4 @@
 import { useState } from 'react'//usestate is a hook in react for state management(hooks used for ui update)
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
