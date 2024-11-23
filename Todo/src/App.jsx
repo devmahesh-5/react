@@ -41,7 +41,7 @@ function App() {
            {todoList.map((todo)=>(
             <div key={todo.id}
              className="w-full">
-                <TodoItem todo={todo} />
+                <TodoItem todo={todo} /> //object passed as props
             </div>
            ))}
         </div>
