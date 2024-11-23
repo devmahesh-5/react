@@ -5,7 +5,8 @@ const initialState={
         id:1,
         text:"todo1",
         completed:false
-    }]
+    }],
+    input:''
 }
 export const todoSlice = createSlice({
     name:"todo",
@@ -30,8 +31,11 @@ export const todoSlice = createSlice({
         completeToggle:(state,action)=>{
             const id=action.payload;
             state.todos=state.todos.map((todo)=>id===todo.id ? {...todo,completed: !todo.completed} : todo)
+        },
+        setInput:(state,action)=>{
+            state.input=action.payload
         }
     }
 })
-export const {addTodo,deleteTodo,updateTodo,completeToggle}=todoSlice.actions;
+export const {addTodo,deleteTodo,updateTodo,completeToggle,setInput}=todoSlice.actions;
 export default todoSlice.reducer

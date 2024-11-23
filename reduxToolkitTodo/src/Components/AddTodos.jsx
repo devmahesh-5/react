@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch,useSelector } from 'react-redux'
 import { addTodo } from '../Features/Todo/todoSlice'
 function AddTodo() {
-
+    const editText=useSelector((state)=>state.input)
     const [input, setInput] = useState('')
     const dispatch = useDispatch()
  

@@ -1,11 +1,10 @@
-import React,{useState} from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {deleteTodo, updateTodo} from '../Features/Todo/todoSlice'
+import {deleteTodo, setInput, updateTodo} from '../Features/Todo/todoSlice'
 
 function Todos() {
     const todos = useSelector(state => state.todos)
     const dispatch = useDispatch()
-    const [isEditable, setIsEditable] = useState(false)
   return (
     <>
     <div>Todos</div>
@@ -35,7 +34,7 @@ function Todos() {
                 />
               </svg>
             </button>
-            
+            {/* <button onClick={() => dispatch(setInput(todo.text))}>Edit</button> */}
           </li>
         ))}
       </ul>
