@@ -4,8 +4,7 @@ function App() {
   const [numAllow, setNumAllow] = useState(false);
   const [charAllow, setCharAllow] = useState(false);
   const [Password, setPassword] = useState("");
-  console.log(length,numAllow,charAllow);
-  console.log(Password);
+ 
   //useCallback hook for optimization(avoiding re-rendering(if the value for certain dependencies has not changed,the component will not re-render as it was saved in the cache which will be used in future))  
 const generatePassword = useCallback(() => {
   let pass = "";
