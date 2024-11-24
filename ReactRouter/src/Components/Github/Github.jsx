@@ -1,7 +1,7 @@
 import React, { useEffect,useState } from 'react'
 
 function Github() {
-    const data = githubInfo();
+    const data = githubInfo();//data get from githubInfo object
     // const [data, setData] = useState([]);
     // useEffect(() => {
     //     fetch('https://api.github.com/users/devmahesh-5')
@@ -20,5 +20,5 @@ export default Github
 export  const githubInfo = async () => {
     const res = await fetch('https://api.github.com/users/devmahesh-5');
     const data = await res.json();
-    return data
+    return data;
 }
