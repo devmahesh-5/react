@@ -6,7 +6,7 @@ function App() {
   const [todoList,setTodoList]=useState([]);
   const addTodo=(title)=>{
     setTodoList((prevTodoList)=>[{ id:Date.now(),title},...prevTodoList])
-    console.log(todoList);
+   
     
     //todoList is an array of objects so we can use spread operator to add objects in new array
   }
