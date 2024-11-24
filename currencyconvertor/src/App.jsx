@@ -11,7 +11,7 @@ function App() {
   const currencyInfo=useCurrencyinfo(fromCurrency);//returns object of currency and exchange rate
   const [convertedAmount,setConvertedAmount]=useState('');
   const options=Object.keys(currencyInfo);
-console.log(options);
+
  
  const swap=()=>{
     setFromCurrency(toCurrency);
