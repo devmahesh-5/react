@@ -34,7 +34,7 @@ function Todos() {
                 />
               </svg>
             </button>
-            {/* <button onClick={() => dispatch(setInput(todo.text))}>Edit</button> */}
+            <button onClick={() => dispatch(setInput(todo.text))}>Edit</button>
           </li>
         ))}
       </ul>
