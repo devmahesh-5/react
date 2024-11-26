@@ -16,7 +16,7 @@ export class Services{
             return await this.databases.createDocument(
                 conf.AppWriteDatabaseId,
                 conf.AppWriteCollectionId,
-                slug,
+                slug,//id
                 {
                     title,
                     content,
@@ -79,7 +79,6 @@ export class Services{
                 conf.AppWriteDatabaseId,
                 conf.AppWriteCollectionId,
                 queries,
-
             )
         } catch (error) {
             console.log("Appwrite::getPosts error",error);
