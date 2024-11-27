@@ -1,4 +1,4 @@
-import conf from "..conf/conf"
+import conf from "../conf/conf"
 import { Client, Account, ID } from "appwrite";
 
 export class AuthService{
@@ -26,7 +26,7 @@ export class AuthService{
    }
    async getCurrentUser(){
     try{
-        return await this.account.get();
+        return await this.account.get();//returns promise which is accesed using .then
     }catch(error){
         throw error;
     }
