@@ -2,8 +2,6 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import authService from '../Appwrite/config';
 function Postcard({$id,title,featuredimage}) {
-
-   
          return (
     <Link to={`/post/${$id}`}>
         <div className='w-full bg-gray-100 rounded-xl p-4'>
