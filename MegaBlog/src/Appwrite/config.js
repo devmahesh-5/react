@@ -110,7 +110,7 @@ export class Services{
             return false
         }
     }
-     FilePreview(fileId){
+     getFilePreview(fileId){
             return  this.storage.getFilePreview(
                 conf.AppWriteStorageBucketId,
                 fileId
