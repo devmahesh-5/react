@@ -52,6 +52,7 @@ function Postform({ post }) {
     }, [])
     React.useEffect(() => {
         const subscription = watch((value,{name}) => {//for optimization we use the variable and later unsubscribe it 
+            //watch method watches the 'name'  everytime the value of 'name' changes
             //here value is value of input field and name is name of input field
                 if(name==='title'){
                     setValue('slug',slugTransform(value.title,

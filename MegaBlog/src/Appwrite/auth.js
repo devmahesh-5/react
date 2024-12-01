@@ -26,7 +26,7 @@ export class AuthService{
    }
    async getCurrentUser(){
     try{
-        return await this.account.get();//returns promise which is accesed using .then
+        return await this.account.get();//returns promise which is data of the user logged in accesed using .then
     }catch(error){
         throw error;
     }
@@ -34,7 +34,7 @@ export class AuthService{
 }
     async logout(){
         try {
-            await account.deleteSessions();
+           return await account.deleteSessions();
         } catch (error) {
             console.log("Appwrite::logout error",error);
         }

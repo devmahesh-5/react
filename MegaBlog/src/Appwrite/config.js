@@ -22,7 +22,7 @@ export class Services{
                     content,
                     featuredimage,
                     status,
-                    userid
+                    userid//logged in user's id which is created at the time of login
                 }
             )
         } catch (error) {
