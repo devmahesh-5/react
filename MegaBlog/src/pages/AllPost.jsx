@@ -1,7 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import services from '../Appwrite/config'
 import { Postcard } from '../Components'
-
+import Container from '../Components/container/Container'
 function AllPost() {
         const [posts,setPosts]=useState([])
         useEffect(()=>{
@@ -18,7 +18,7 @@ function AllPost() {
                 {
                     posts.map((post)=>(
                         <div className=' p-2 w-1/4' key={post.$id}>
-                            <Postcard post = {post} />
+                            <Postcard {...post} />
                         </div>
                     ))
                 }

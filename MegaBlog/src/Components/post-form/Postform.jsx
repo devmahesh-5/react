@@ -3,7 +3,7 @@ import services from '../../Appwrite/config';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Input, Button, Select } from '..';
+import { Input, Button, Select,RTE } from '..';
 function Postform({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
         defaultValues: {
@@ -13,7 +13,7 @@ function Postform({ post }) {
         }
     });
     const navigate = useNavigate();
-    const userData = useSelector((state) => state.auth.userData);
+    const userData = useSelector((state) => state.userData);
     const submit = async (data) => {
         if (post) {
             const file = data.image[0] ? await services.uploadFile(data.image[0]) : null;
@@ -28,16 +28,21 @@ function Postform({ post }) {
                 navigate(`/post/${post.$id}`);
             }
         } else {
-            file = await services.uploadFile(data.image[0]);
+            const file = data.image?.[0] ? await services.uploadFile(data.image[0]) : null;
             if (file) {
                 data.featuredimage = file.$id;
+                
+                
                 const newPost = await services.createPost({
                     ...data,
                     userid: userData.$id//userData is the all data of user who is logged in which is accesed by getCurrentUser function and stored in authslice from login component
+                    
                 });
                 if (newPost) {
                     navigate(`/post/${newPost.$id}`);
-                }
+                } 
+            }else{
+                console.log("error");
             }
         }
     }
@@ -47,7 +52,8 @@ function Postform({ post }) {
             return value
                 .trim()
                 .toLowerCase()
-                .replace(/[^a-zA-z\d ]+/g, '')
+                .replace(/[^a-zA-Z\d\s]+/g, "-")
+                .replace(/\s/g, "-");
         return '';
     }, [])
     React.useEffect(() => {
@@ -82,7 +88,7 @@ function Postform({ post }) {
                     setValue("slug", slugTransform(e.currentTarget.value), { shouldValidate: true });
                 }}//now whenever we enter space in slug input field it changes to - under the hood and changes state
             />
-            <RTE label="Content :" name="content" control={control} defaultValue={getValues("content")} />
+            <RTE label="Content :" name="content" Control={control} defaultValue={getValues("content")} />
         </div>
         <div className="w-1/3 px-2">
             <Input
@@ -95,7 +101,7 @@ function Postform({ post }) {
             {post && (
                 <div className="w-full mb-4">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={services.getFilePreview(post.featuredimage)}
                         alt={post.title}
                         className="rounded-lg"
                     />

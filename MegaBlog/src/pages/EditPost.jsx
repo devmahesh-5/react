@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
 import { useParams,useNavigate } from 'react-router-dom';
 import services from '../Appwrite/config';
 import Container from '../Components/container/Container';
-import { set } from 'react-hook-form';
+import Postform from '../Components/post-form/Postform';
 
 function EditPost() {
     const {slug}=useParams();

@@ -1,12 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import authService from '../Appwrite/config';
+import services from '../Appwrite/config';
 function Postcard({$id,title,featuredimage}) {
          return (
     <Link to={`/post/${$id}`}>
         <div className='w-full bg-gray-100 rounded-xl p-4'>
             <div className='w-full justify-center mb-4'>
-                <img src={authService.getFilePreview(featuredimage)} alt={title}
+                <img src={services.getFilePreview(featuredimage)} alt={title}
                 className='rounded-xl' />
 
             </div>

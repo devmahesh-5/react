@@ -10,8 +10,8 @@ export default function Post() {
     const { slug } = useParams();
     const navigate = useNavigate();
 
-    const userData = useSelector((state) => state.auth.userData);
-
+    const userData = useSelector((state) => state.userData);
+    // console.log('user',userData.$id);
     const isAuthor = post && userData ? post.userId === userData.$id : false;
 
     useEffect(() => {
@@ -26,7 +26,9 @@ export default function Post() {
     const deletePost = () => {
         services.deletePost(post.$id).then((status) => {
             if (status) {
-                services.deleteFile(post.featuredImage);
+                services.deleteFile(post.featuredimage);
+               
+                
                 navigate("/");
             }
         });
@@ -37,7 +39,7 @@ export default function Post() {
             <Container>
                 <div className="w-full flex justify-center mb-4 relative border rounded-xl p-2">
                     <img
-                        src={appwriteService.getFilePreview(post.featuredImage)}
+                        src={services.getFilePreview(post.featuredimage)}
                         alt={post.title}
                         className="rounded-xl"
                     />

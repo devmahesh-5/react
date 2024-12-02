@@ -5,7 +5,7 @@ import Container from '../Components/container/Container'
 function Home() {
     const [posts,setPosts]=useState([])
     useEffect(()=>{
-        services.getPosts().then((posts)=>{
+        services.getPosts([]).then((posts)=>{
             setPosts(posts.documents);
         })
     },[])
@@ -31,7 +31,7 @@ function Home() {
                     {
                         posts.map((post)=>(
                             <div className=' p-2 w-1/4' key={post.$id}>
-                                <Postcard post = {post} />
+                                <Postcard {...post} />
                             </div>
                         ))
                     }
