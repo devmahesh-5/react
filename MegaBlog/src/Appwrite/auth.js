@@ -2,6 +2,7 @@ import conf from "../conf/conf"
 import { Client, Account, ID } from "appwrite";
 
 export class AuthService{
+
     client = new Client();
     account;//as a method account cant be defined before client method setendpoint and setproject are defined
     constructor(){
@@ -34,7 +35,7 @@ export class AuthService{
 }
     async logout(){
         try {
-           return await account.deleteSessions();
+           return await this.account.deleteSessions();
         } catch (error) {
             console.log("Appwrite::logout error",error);
         }

@@ -1,4 +1,3 @@
-import App from "../App"
 
 const conf={
     AppWriteEndpoint:String(import.meta.env.VITE_APPWRITE_ENDPOINT),
@@ -7,4 +6,5 @@ const conf={
     AppWriteCollectionId:String(import.meta.env.VITE_APPWRITE_COLLECTION_ID),
     AppWriteStorageBucketId:String(import.meta.env.VITE_APPWRITE_STORAGE_BUCKET_ID),
 }
-export default conf
+
+export default conf;

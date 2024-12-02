@@ -6,7 +6,7 @@ import { useNavigate, Link } from 'react-router-dom';
 import { Button, Logo, Input } from './index';
 import { useForm } from 'react-hook-form';
 
-function Login(data) {
+export default function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const { register, handleSubmit } = useForm();
@@ -45,7 +45,7 @@ function Login(data) {
                     </Link>
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-                <form onSubmit={handleSubmit(login(data))} className="mt-8">
+                <form onSubmit={handleSubmit(login)} className="mt-8">
                     <div className="space-y-4">
                         <Input 
                             label="Email: "

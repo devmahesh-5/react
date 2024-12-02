@@ -1,11 +1,12 @@
 import React from 'react'
-import {Container,Logo, LogoutBtn} from '../index';
-import { Link, Links } from 'react-router-dom';
+import Container from '../container/Container';
+import {Logo, LogoutBtn} from '../index';
+import { Link} from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 function Header() {
     const navigate = useNavigate();
-    const authStatus = useSelector((state)=>state.auth.status);
+    const authStatus = useSelector((state)=>state.status);
     const navItems = [
         {
           name: 'Home',
@@ -39,9 +40,9 @@ function Header() {
           <Container>
           <nav className='flex'>
             <div className='mr-4'>
-            <Links to="/">
+            <Link to="/">
               <Logo width='70px'/>
-            </Links>
+            </Link>
             </div>
                 <ul className='flex ml-auto'>
                 {

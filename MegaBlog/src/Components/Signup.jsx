@@ -4,7 +4,8 @@ import authService from '../Appwrite/auth';
 import { useDispatch } from 'react-redux';
 import {login} from '../../store/authslice';
 import { useForm } from 'react-hook-form';
-function Signup(data) {
+import { Button, Logo, Input } from './index';
+function Signup() {
     const [error,setError]=useState(null);
     const navigate = useNavigate();
     const dispatch = useDispatch();
@@ -43,7 +44,7 @@ function Signup(data) {
                     </Link>
                 </p>
                 {error && <p className="text-red-600 mt-8 text-center">{error}</p>}
-                <form onSubmit={handleSubmit(signUp(data))} className="mt-8">
+                <form onSubmit={handleSubmit(signUp)} className="mt-8">
                     <div className="space-y-5">
                         <Input 
                         type="text"
