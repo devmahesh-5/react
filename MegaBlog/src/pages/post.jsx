@@ -10,10 +10,15 @@ export default function Post() {
     const { slug } = useParams();
     const navigate = useNavigate();
 
-    const userData = useSelector((state) => state.userData);
+    const userData = useSelector((state) => state.auth.userData);
     // console.log('user',userData.$id);
-    const isAuthor = post && userData ? post.userId === userData.$id : false;
-
+    const isAuthor = post && userData ? post.userid == userData.$id : false;
+//   console.log('post',post);
+//   console.log('isAuthor',isAuthor);
+//   console.log('postuser',post.userid);
+  
+    
+    
     useEffect(() => {
         if (slug) {
             services.getPost(slug).then((post) => {

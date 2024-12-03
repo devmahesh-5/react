@@ -5,7 +5,7 @@ import { useEffect,useState } from 'react'
 
 export default function Protected({children,authentication}) {
     const navigate=useNavigate()
-    const authStatus=useSelector((state)=>state.status)
+    const authStatus=useSelector((state)=>state.auth.status)
     const [loading,setLoading]=useState(true)
     useEffect(()=>{
         if(authentication && authStatus!==authentication){//true && false = false     true && true = true
