@@ -70,7 +70,6 @@ export class Services{
             )
         } catch (error) {
             console.log("Appwrite::getPost error",error);
-            
         }
     }
     async getPosts(queries=[Query.equal("status","active")]){

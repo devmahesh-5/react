@@ -31,8 +31,6 @@ function Postform({ post }) {
             const file = data.image?.[0] ? await services.uploadFile(data.image[0]) : null;
             if (file) {
                 data.featuredimage = file.$id;
-                
-                
                 const newPost = await services.createPost({
                     ...data,
                     userid: userData.$id//userData is the all data of user who is logged in which is accesed by getCurrentUser function and stored in authslice from login component
