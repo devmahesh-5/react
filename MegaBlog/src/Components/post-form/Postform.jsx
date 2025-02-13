@@ -75,6 +75,7 @@ function Postform({ post }) {
                 label="Title :"
                 placeholder="Title"
                 className="mb-4"
+                defaultValue={post?.title}
                 {...register("title", { required: true })}
             />
             <Input

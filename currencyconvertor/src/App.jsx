@@ -44,7 +44,8 @@ return (
                           label="From" 
                           amount={amount}
                            onAmountChange={(amount)=>setAmount(amount)} 
-                           onCurrencyChange={(currency)=>setFromCurrency(currency)} currencyOptions={options} 
+                           onCurrencyChange={(currency)=>setFromCurrency(currency)} 
+                           currencyOptions={options} 
                            selectedCurrency={fromCurrency}
                       />
                   </div>
