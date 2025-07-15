@@ -12,7 +12,7 @@ function InputBox({
     currencyDisabled=false,
     className = "",
 }) {
-   const amountId=useId();// it is hook which generates a unique id 
+   const amountId=useId();// it is react hook which generates a unique id 
 
     return (
         <div className={`bg-white p-3 rounded-lg text-sm flex ${className}`}>

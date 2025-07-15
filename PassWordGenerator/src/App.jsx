@@ -30,7 +30,6 @@ useEffect(() => {
   generatePassword();
 },[numAllow,charAllow,length,generatePassword])
   return (
-  
       <div className='w-full justify-center items-center flex flex-col bg-slate-800 rounded-lg'>
       <h1 className="font-bold text-white text-3xl">Password Generator</h1>
        <div className='flex flex-wrap gap-2 justify-center'>
@@ -43,8 +42,8 @@ useEffect(() => {
        <button className='bg-blue-500 text-white p-2 rounded-lg opacity-80 hover:opacity-100' onClick={copyToClipboard}>Copy</button></div> 
         <div className='flex flex-wrap gap-2 text-white m-auto'><input type="range" id="length" min={6} max={20} value={length} onChange={(e)=>setLength(e.target.value)} className='p-2 rounded-lg cursor-pointer' /> <label htmlFor="length">Length {length}</label>
 
-        <input type="checkbox" id='num' onChange={()=>setNumAllow((prev)=>!prev)}/> <label htmlFor="num"> Number</label>
-        <input type="checkbox" id='char' onChange={()=>setCharAllow((prev)=>!prev)} /> <label htmlFor="char"> Character</label>
+        <input type="checkbox" id='num' onChange={()=>setNumAllow(prev=>!prev)}/> <label htmlFor="num"> Number</label>
+        <input type="checkbox" id='char' onChange={()=>setCharAllow(prev=>!prev)} /> <label htmlFor="char"> Character</label>
         </div>
       </div>
   
